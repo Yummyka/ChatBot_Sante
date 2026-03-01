@@ -1,0 +1,32 @@
+{
+    "metadata": {
+        "intent": "MEDICAL",
+        "timestamp": "20260301_184120"
+    },
+    "history": [
+        {
+            "role": "user",
+            "content": "Bonjour, j'ai de la fièvre"
+        },
+        {
+            "role": "assistant",
+            "content": "Bonjour, je suis là pour vous aider. \n\nPouvez-vous me dire combien de jours vous avez la fièvre et si elle est accompagnée de autres symptômes tels que des douleurs, des nausées ou des difficultés respiratoires ?"
+        },
+        {
+            "role": "user",
+            "content": "Ma fièvre a commencée ce matin et je me sens fatiguée."
+        },
+        {
+            "role": "assistant",
+            "content": "Il semble que vous soyez en bonne santé générale, mais que vous avez une fièvre et des sentiments de fatigue. \n\nSi vous avez des douleurs, des nausées ou des difficultés respiratoires, il est recommandé de consulter un médecin au plus vite. Sinon, vous pouvez envisager de solliciter une téléconsultation sur une borne Tessan pour obtenir des conseils plus précis."
+        },
+        {
+            "role": "user",
+            "content": "j'ai 38 de fièvre d'après mon thermomètre. C'est grave ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Une fièvre de 38°C peut être considérée comme élevée, mais elle n'est pas toujours grave. Cependant, il est important de surveiller votre état et de consulter un médecin si vous avez des symptômes supplémentaires tels que des douleurs, des nausées, des difficultés respiratoires ou si votre fièvre persiste ou s'aggrave au fil des heures.\n\nSi vous n'avez pas d'autres symptômes, vous pouvez envisager de solliciter une téléconsultation sur une borne Tessan pour obtenir des conseils plus précis."
+        }
+    ]
+}
