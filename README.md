@@ -67,4 +67,4 @@ Vous trouverez des exemples de discussion dans les fichiers suivants :
 ### Analyse et limites : 
 En lisant les logs on peut se rendre compte que les phrases générées ne sont pas toujours cohérentes ou comportent des fautes. Cela peut s'expliquer par le fait que le modèle de LLM utilisé ici est en accès gratuit et n'est donc pas très puissant. Pour améliorer les résultat on pourrait envisager de passer à un LLM plus évolué.
 
-On observe également que notre modèle hallucine, proposant des "gellules de citron" comme remède. Cela appuie le besoin de monitoring et montre que la consigne de ne rien prescrire peut être contournée. Pour limiter l'hallucination on pourrait envisager de connecter l'IA à une base de donnée sûre et vérifiée afin d'assurer la justesse des informations (via un RAG éventuellement)
+On observe également que notre modèle hallucine, proposant des "gellules de citron" comme remède. Cela appuie le besoin de monitoring et montre que la consigne de ne rien prescrire peut être contournée. Pour limiter l'hallucination on pourrait envisager de connecter l'IA à une base de donnée sûre et vérifiée afin d'assurer la justesse des informations.
