@@ -58,7 +58,8 @@ class Discussion ():
                 messages=context,
                 max_tokens=self.max_token,
                 temperature=self.temp)
-        return answer_gen.choices[0].message.content
+        return answer_gen.choices[0].message.content, answer_gen.choices[0].finish_reason #détecte la raison de l'arrêt de la réponse
+    
     
     def process_input(self, user_input):
         self.hist.append({"role":"user","content":user_input}) #Ajout de l'entrée de l'utilisateur à l'historique
@@ -66,7 +67,8 @@ class Discussion ():
         #Test de l'intention si elle n'a pas encore été détectée
         if self.intent is None : 
             context_detection = [{"role":"system","content":self.prompt_sys["INTENT"]}] + self.hist[-1:]
-            intent = self.call_AI(context_detection).upper()
+            intent,_ = self.call_AI(context_detection)
+            intent = intent.upper()
 
             if "MEDICAL" in intent: self.intent = "MEDICAL"
             elif "ADMIN" in intent: self.intent = "ADMIN"
@@ -81,7 +83,11 @@ class Discussion ():
             context = [{"role":"system","content":self.prompt_sys[self.intent]}] + self.hist[-self.window:]
             
             #Call l'IA pour répondre :
-            answer_fin = self.call_AI(context)
+            answer_fin, stop_reason = self.call_AI(context)
+            i = 0
+            while stop_reason !="stop" and i<3:
+                answer_fin, stop_reason = self.call_AI(context)
+                i += 1
             
         self.hist.append({"role":"assistant","content":answer_fin})
 

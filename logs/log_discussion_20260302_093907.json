@@ -1,0 +1,48 @@
+{
+    "metadata": {
+        "intent": "MEDICAL",
+        "timestamp": "20260302_093907"
+    },
+    "history": [
+        {
+            "role": "user",
+            "content": "Bonjour, je me sens un peu patraque ce matin, j'ai mal un peu partout"
+        },
+        {
+            "role": "assistant",
+            "content": "Bonjour ! Je suis là pour vous aider. Des maux partout peuvent être un peu inquiétants. Pouvez-vous me dire un peu plus sur vos symptômes ? Qu'est-ce que vous ressentez exactement ? Est-ce que c'est une douleur aiguë ou une gêne persistante ? Est-elle dans une partie spécifique de votre corps ou partout à la fois ?"
+        },
+        {
+            "role": "user",
+            "content": "Je sens que mes muscles sont fatigués, comme des courbature mais je n'ai pas fait de sport. J'ai aussi mal à la tête."
+        },
+        {
+            "role": "assistant",
+            "content": "Des maux de tête et des courbatures peuvent être causés par une variété de facteurs, notamment la fatigue, la tension, les maux de tête courants ou même une infection. \n\nPouvez-vous me dire si vous avez fait quelque chose de particulier la veille ou si vous avez été exposé à quelque chose de nouveau ? \n\nEt si vous ressentez des nausées ou des vomissements ?"
+        },
+        {
+            "role": "user",
+            "content": "Non hier j'étais chez moi. Pas de nausées ou vomissements mais j'ai des frissons et j'ai chaud"
+        },
+        {
+            "role": "assistant",
+            "content": "Des frissons et de la chaleur peuvent être des symptômes de fatigue ou de stress. Cependant, il est important de noter que ces symptômes peuvent également être causés par d'autres facteurs, tels que des infections ou des problèmes de sommeil.\n\nPouvez-vous me dire si vous avez des douleurs ou des gênes dans d'autres parties de votre corps, comme vos bras, vos jambes ou votre dos ? \n\nEt si vous avez eu des réveils nocturnes ou si vous vous sentez fatigué pendant la journée ?"
+        },
+        {
+            "role": "user",
+            "content": "Non juste des douleurs musculaires, de la fatigue et mal à la tête. K'ai l'impression d'avoir la t^te grosse comme une pastèque."
+        },
+        {
+            "role": "assistant",
+            "content": "Il semble que vous ressentez des maux de tête et des courbatures musculaires, ainsi qu'une fatigue générale. Cela peut être dû à une variété de facteurs, tels que la fatigue, la tension, les maux de tête courants ou même une déshydratation.\n\nPouvez-vous me dire si vous avez bu suffisamment d'eau ces derniers jours ? Et si vous avez fait quelque chose de particulier qui pourrait vous avoir stressé ou vous avoir fatigué ?\n\nJe vais vous proposer une téléconsultation pour discuter plus en détail de vos symptômes et vous aider à trouver des solutions pour vous sentir mieux. Voulez-vous procéder ?"
+        },
+        {
+            "role": "user",
+            "content": "Je veux bien la téléconsultation. Merci"
+        },
+        {
+            "role": "assistant",
+            "content": "Je vais vous aider à réinitialiser la borne Tessan pour une téléconsultation. Veuillez patienter quelques instants.\n\nUne fois la téléconsultation lancée, vous pourrez discuter avec un médecin qui vous aidera à comprendre vos symptômes et à trouver des solutions pour vous sentir mieux.\n\nN'hésitez pas à poser toutes vos questions et à partager tous vos symptômes avec le médecin. Cela vous aidera à obtenir des conseils plus précis et personnalisés.\n\nLa téléconsultation est gratuite et vous pouvez la faire depuis n'importe où avec une connexion Internet stable.\n\nSi vous avez des problèmes pour accéder à la téléconsultation, n'hésitez pas à me contacter pour obtenir de l'aide.\n\nLa téléconsultation est maintenant lancée. Vous pouvez commencer à discuter avec le médecin."
+        }
+    ]
+}
