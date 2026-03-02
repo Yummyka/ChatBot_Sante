@@ -10,7 +10,7 @@ Ce projet est un prototype d'assistant virtuel pour des questions médicales. Il
 |Catégorie|Description|Contenu du prompt|
 |:-:|:-:|:-:|
 |INTENT|Permet la détection de l'intention de l'utilisateur|Description de chaque intention, ne renvoie que la catégorie de l'intention.|
-|MEDICAL|Contient toutes les questions relative à des symptomes, des renseignements sur des pathologies ou des inquiétudes.|Classe les demandes en 3 niveaux (urgence, besoin médical, information générale) afin d'adapter la réponse. Interdiction de poser un diagnostique, détection de cas d'urgence vitale necessitant l'appel des secours, proposition de téléconsultation si pertinent.|
+|MEDICAL|Contient toutes les questions relative à des symptomes, des renseignements sur des pathologies ou des inquiétudes.|Classe les demandes en 3 niveaux (urgence, besoin médical, information générale) afin d'adapter la réponse. Interdiction de poser un diagnostic, détection de cas d'urgence vitale necessitant l'appel des secours, proposition de téléconsultation si pertinent.|
 |ADMIN|Contient toutes les questions relatives au fonctionnement de Tessan ou du monde médical.|Redirection vers la FAQ de Tessan pour plus d'information.|
 |AUTRE|Contient toute autre question ne relevant pas de la compétence du chatbot|Contient une phrase automatique envoyée (pas d'appel à l'IA)|
 
@@ -49,17 +49,22 @@ $env:HF_API_KEY="votre_clef"
 ## Structure du projet : 
 ```bash
 .
-├── 📄 main.py    # Fichier principal à executer pour lancer la discussion
-├── ⚙️ prompt_syst.txt    # Fichier des prompts système
-├── 📂 logs/    # Dossier contenant l'historique des discussion
-│   └── 📜 discussion_20260302_1422.json    # Fichier JSON horodaté d'une discussion
-├── 📘 README.md    # Documentation technique et guide d'installation
-└── 📋 test.ipynb    # Notebook de tests
+├── main.py    # Fichier principal à executer pour lancer la discussion
+├── prompt_syst.txt    # Fichier des prompts système
+├── logs/    # Dossier contenant l'historique des discussion
+│   └── discussion_20260302_1422.json    # Fichier JSON horodaté d'une discussion
+├── README.md    # Documentation technique et guide d'installation
+└── test.ipynb    # Notebook de tests
 ```
 
 ## Exemple de discussion : 
 Vous trouverez des exemples de discussion dans les fichiers suivants : 
-- [Cas d'urgence](./logs/?)
-- [Symptomes classiques](./logs/??)
-- [Question administrative](./logs/???)
-- [Question hors-sujet](./logs/????)
+- [Cas d'urgence](./logs/urgence.json)
+- [Symptomes classiques](./logs/symptomes_classiques.json)
+- [Question administrative](./logs/administratif.json)
+- [Question hors-sujet](./logs/hors_sujet.json)
+
+### Analyse et limites : 
+En lisant les logs on peut se rendre compte que les phrases générées ne sont pas toujours cohérentes ou comportent des fautes. Cela peut s'expliquer par le fait que le modèle de LLM utilisé ici est en accès gratuit et n'est donc pas très puissant. Pour améliorer les résultat on pourrait envisager de passer à un LLM plus évolué.
+
+On observe également que notre modèle hallucine, proposant des "gellules de citron" comme remède. Cela appuie le besoin de monitoring et montre que la consigne de ne rien prescrire peut être contournée. Pour limiter l'hallucination on pourrait envisager de connecter l'IA à une base de donnée sûre et vérifiée afin d'assurer la justesse des informations (via un RAG éventuellement)

@@ -1,0 +1,32 @@
+{
+    "metadata": {
+        "intent": "MEDICAL",
+        "timestamp": "20260302_145816"
+    },
+    "history": [
+        {
+            "role": "user",
+            "content": "Bonjour, je ne me sens pas très bien depuis ce matin, je pense que je suis malade, vous pouvez m'aider ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Bonjour ! Je suis là pour vous aider, mais avant de discuter de vos symptômes, je voudrais savoir si vous vous sentez particulièrement mal, comme si vous aviez une urgence vitale. Par exemple, avez-vous des douleurs thoraciques, des difficultés respiratoires, des nausées sévères ou des signes d'hémorragie ?\n\nSi vous ressentez l'une de ces choses, il est crucial de contacter les services de secours immédiatement. Sinon, nous pouvons discuter de vos symptômes et essayer de vous aider à comprendre ce qui se passe.\n\nPouvez-vous me dire un peu plus sur ce que vous ressentez depuis ce matin ?"
+        },
+        {
+            "role": "user",
+            "content": "J'ai mal à la gorge et je tousse un peu"
+        },
+        {
+            "role": "assistant",
+            "content": "Des symptômes de gorge et de toux peuvent être causés par une variété de choses, comme un rhume, une infection respiratoire ou même une allergie.\n\nPour mieux comprendre ce qui se passe, pouvez-vous me dire :\n\n* Est-ce que votre gorge est enflammée ou brûlante ?\n* Est-ce que vous avez des douleurs ou des gonflements dans votre cou ou votre gorge ?\n* Est-ce que votre toux est produite par des sécrétions ou des bruits anormaux ?\n* Avez-vous des fièvres ou des maux de tête ?\n* Avez-vous des difficultés respiratoires ou des soufflements ?\n\nCes informations m'aideront à vous donner des conseils plus précis."
+        },
+        {
+            "role": "user",
+            "content": "Pas de gonflements, c'est plus une sensation de gêne. Je n'ai pas mal à la tête mais j'ai 37 de fièvre. C'est grave ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Une fièvre de 37°C est légèrement élevée, mais elle ne constitue pas une urgence vitale. Cependant, il est important de noter que votre fièvre est légèrement élevée, ce qui peut indiquer une infection respiratoire ou une inflammation de la gorge.\n\nPuisque vous ressentez une sensation de gêne à la gorge et une légère fièvre, je vous conseille de consulter un médecin au plus vite. Vous pouvez également essayer de vous reposer, de boire beaucoup d'eau et de prendre des médicaments de remplacement de l'eau (comme des gélules de citron ou des jus de fruits) pour aider à soulager vos symptômes.\n\nSi vous avez accès à une borne Tessan, vous pouvez également solliciter une téléconsultation pour obtenir un avis médical plus précis.\n\nJe vous conseille de ne pas prendre quoi que ce soit sans consulter un médecin d'abord."
+        }
+    ]
+}

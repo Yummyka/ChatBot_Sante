@@ -1,0 +1,16 @@
+{
+    "metadata": {
+        "intent": "ADMIN",
+        "timestamp": "20260302_151017"
+    },
+    "history": [
+        {
+            "role": "user",
+            "content": "Bonjour, savez-vous si les télécoonsultations Tessan sont remboursées par la sécu ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Bonjour !\n\nPour vous aider, j'ai consulté le site de Tessan et sa FAQ. Selon les informations disponibles, les télécoconultations Tessan sont remboursées par la Sécurité Sociale, mais il est important de vérifier les conditions d'admissibilité et les détails du remboursement.\n\nPour obtenir plus d'informations, je vous invite à consulter le site de Tessan et sa FAQ : https://aide.tessan.io/fr/\n\nVous pouvez également contacter directement la Sécurité Sociale ou le service de Tessan pour obtenir des informations plus précises sur les conditions d'admissibilité et les détails du remboursement.\n\nAvant de poursuivre, pouvez-vous me dire si vous avez déjà essayé de contacter Tessan ou la Sécurité Sociale pour obtenir des informations sur les télécoconultations ?"
+        }
+    ]
+}

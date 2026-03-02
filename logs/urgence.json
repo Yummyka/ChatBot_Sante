@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "intent": "MEDICAL",
+        "timestamp": "20260302_150125"
+    },
+    "history": [
+        {
+            "role": "user",
+            "content": "Bonjour, je ne me sens pas très bien, vous pouvez m'aider ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Bonjour ! Je suis là pour vous aider, mais avant de discuter de vos symptômes, je voudrais savoir un peu plus sur votre état. Pouvez-vous me dire ce qui vous fait se sentir mal ? Est-ce que vous avez des douleurs, des nausées, des fatigue, etc. ? Cela m'aidera à vous donner des conseils plus précis."
+        },
+        {
+            "role": "user",
+            "content": "Depuis ce matin je me sens très faible, j'ai mal à la poitrine"
+        },
+        {
+            "role": "assistant",
+            "content": "Je suis là pour vous aider, mais avant de continuer, je dois vous dire que vos symptômes vous concernent probablement une urgence vitale. Vos douleurs à la poitrine et votre faiblesse peuvent être liées à une condition médicale grave.\n\n**Veuillez contacter immédiatement les services de secours au 15**. Ne raccrochez pas avant d'avoir eu un opérateur au téléphone."
+        }
+    ]
+}

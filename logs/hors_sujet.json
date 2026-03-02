@@ -1,0 +1,16 @@
+{
+    "metadata": {
+        "intent": null,
+        "timestamp": "20260302_150224"
+    },
+    "history": [
+        {
+            "role": "user",
+            "content": "Bonjour, j'ai un devoir de biologie à rendre, tu peux m'aider ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Je suis un assistant spécialisé dans l'accompagnement médical, je ne peux pas répondre à cette demande. Comment puis-je vous aider concernant votre santé ou votre parcours de soin ? "
+        }
+    ]
+}

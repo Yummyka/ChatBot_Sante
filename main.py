@@ -14,7 +14,7 @@ class Discussion ():
     Cette classe gère le cycle de vie d'une conversation entre l'utilisateur et le chatbot.
     Elle assure la détection d'intention, l'import des prompts système, la gestion du contexte et l'enregistrement des échanges.
     """
-    def __init__(self, modelID, api_key, window=5, max_token=500, temp=0.2):
+    def __init__(self, modelID, api_key, window=6, max_token=500, temp=0.2):
         """
         Initialise la discussion.
 
