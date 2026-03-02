@@ -4,28 +4,46 @@ import json
 from datetime import datetime
 import time
 
-# Import de la clef d'API (via variable d'environnement) et du modèle
-api_key = os.getenv("HF_API_KEY")
+# Import de la clef d'API Hugging Face (via variable d'environnement) et du modèle
+api_key = os.getenv("HF_API_KEY") 
 modelID="meta-llama/Llama-3.2-3B-Instruct"
 
-#Classe permettant la discussion suivie sur plusieurs messages avec l'utilisateur 
+
 class Discussion ():
+    """ 
+    Cette classe gère le cycle de vie d'une conversation entre l'utilisateur et le chatbot.
+    Elle assure la détection d'intention, l'import des prompts système, la gestion du contexte et l'enregistrement des échanges.
+    """
     def __init__(self, modelID, api_key, window=5, max_token=500, temp=0.2):
+        """
+        Initialise la discussion.
+
+        Args : 
+            modelID (str): Identifiant du modèle d'IA sur HuggingFace.
+            api_key (str) : Clef d'API pour l'inférence.
+            window (int) : Longueur de la fenêtre glissante de mémoire.
+            max_token (int) : Longueur maximale de la réponse générée par l'IA.
+            temp (float) : Température du modèle (privilégier une température faible pour limiter les risques d'hallucination).
+        """
         self.client = InferenceClient(api_key=api_key)
         self.modelID = modelID
-        self.window = window #longueur de la fenêtre glissante de mémoire
-        self.max_token = max_token #longueur de la réponse de l'IA
+        self.window = window
+        self.max_token = max_token
         self.temp = temp
         self.hist = []
         self.intent = None
-        
-        #Définition des prompts système en fonction du type de discussion
-        self.prompt_sys = {}
+        self.prompt_sys = {} #Les prompts sont importés plus loin
 
     def save_log(self, filename="./logs/log_discussion"):
+        """
+        Cette fonction exporte l'intégralité de la discussion au format JSON.
+        """
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"{filename}_{timestamp}.json"
         
+        if not os.path.exists("./logs"):
+            os.makedirs("./logs")
+
         data_to_save = {
             "metadata": {
                 "intent": self.intent,
@@ -39,6 +57,10 @@ class Discussion ():
         print(f"Historique sauvegardé avec succès dans : {filename}")
     
     def load_syst_prompt(self, filename):
+        """
+        Cette fonction importe les prompts systèmes depuis un fichier texte.
+        Pour fonctionner, le fichier texte doit comporter des balises de type [NOM_DU_PROMPT]
+        """
         prompts = {}
         current_key = None
         with open(filename, 'r', encoding='utf-8') as f:
@@ -52,16 +74,29 @@ class Discussion ():
         self.prompt_sys=prompts
 
     
-    def call_AI(self, context):
+    def call_AI(self, context, max_tokens=None):
+        """
+        Cette fonction effectue un appel API.
+        Permet de vérifier si le message a été tronqué ou non.
+
+        Returns : 
+            tuple : (Contenu de la réponse, Raison de fin de réponse)
+        """
+        max_tokens = max_tokens if max_tokens else self.max_token #Pour pouvoir allonger le message si besoin
+
         answer_gen = self.client.chat.completions.create(
                 model=self.modelID,
                 messages=context,
-                max_tokens=self.max_token,
+                max_tokens=max_tokens,
                 temperature=self.temp)
-        return answer_gen.choices[0].message.content, answer_gen.choices[0].finish_reason #détecte la raison de l'arrêt de la réponse
+        return answer_gen.choices[0].message.content, answer_gen.choices[0].finish_reason
     
     
     def process_input(self, user_input):
+        """
+        Cette fonction traite l'entrée de l'utilisateur et génère une réponse. 
+        Elle permet également la détection de l'intention du message si elle est encore inconnue.
+        """
         self.hist.append({"role":"user","content":user_input}) #Ajout de l'entrée de l'utilisateur à l'historique
         
         #Test de l'intention si elle n'a pas encore été détectée
@@ -77,24 +112,27 @@ class Discussion ():
         #Réponse à la requete en fonction de l'intention
         if self.intent == "AUTRE":
             answer_fin= self.prompt_sys["AUTRE"]
-            self.intent = None
+            self.intent = None #Annule la détection d'intention afin de pouvoir relancer la discussion
         else :
-            #Créer la fenêtre de contexte :
+            #Création de la fenêtre de contexte :
             context = [{"role":"system","content":self.prompt_sys[self.intent]}] + self.hist[-self.window:]
             
-            #Call l'IA pour répondre :
+            #Appel de l'IA pour répondre :
             answer_fin, stop_reason = self.call_AI(context)
             i = 0
-            while stop_reason !="stop" and i<3:
-                answer_fin, stop_reason = self.call_AI(context)
+            while stop_reason !="stop" and i<3: #Vérifie que le prompt n'a pas été tronqué
                 i += 1
-            
+                answer_fin, stop_reason = self.call_AI(context, max_tokens=(self.max_token+i*100)) #Augmente le nombre de token si besoin
+                            
         self.hist.append({"role":"assistant","content":answer_fin})
 
         return answer_fin
 
 def print_chat(chat, word_width=12):
-    print("ChatBot : ")
+    """
+    Affiche la réponse de l'IA avec un décalage à droite pour plus de lisibilité.
+    """
+    print("> ChatBot : ")
     for paragraph in chat.split('\n'):
         paragraph = paragraph.split()
         margin = "                               "
@@ -102,6 +140,8 @@ def print_chat(chat, word_width=12):
             print(margin, *paragraph[i:i+word_width])
     print()
 
+
+# Pipeline principale
 if __name__ == "__main__":
     chat = Discussion(modelID=modelID,api_key=api_key)
 
@@ -112,11 +152,11 @@ if __name__ == "__main__":
 
     t_start = time.time()
     while (time.time()-t_start) < 3600 : #Ferme automatiquement le chat au bout d'une heure
-        user_input= input("Vous : ")
+        user_input= input("> Vous : ")
         print()
 
         if user_input.upper() == "FIN":
-            print("\n--- Fin de la simulation ---")
+            print("\n--- Fin de la discussion ---")
             break
         
         answer = chat.process_input(user_input=user_input)

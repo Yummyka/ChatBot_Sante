@@ -1,0 +1,32 @@
+{
+    "metadata": {
+        "intent": "MEDICAL",
+        "timestamp": "20260302_133523"
+    },
+    "history": [
+        {
+            "role": "user",
+            "content": "Bonjour, j'ai mal à la gorge depuis ce matin et je ne me sens pas très bien"
+        },
+        {
+            "role": "assistant",
+            "content": "Bonjour ! Je suis là pour vous aider, mais avant de poursuivre, je voudrais savoir si vous ressentez des symptômes graves tels que :\n\n* Des douleurs aigues ou des difficultés respiratoires ?\n* Une fièvre élevée (au-dessus de 38°C) ?\n* Des vomissements ou des nausées ?\n* Des douleurs ou des gonflements dans la poitrine ou les bras ?\n\nCes informations m'aideront à déterminer la priorité de notre conversation."
+        },
+        {
+            "role": "user",
+            "content": "J'ai 37,5 de fièvre d'après mon thermomètre, j'ai aussi un peu de toux"
+        },
+        {
+            "role": "assistant",
+            "content": "Merci de me fournir ces informations. Avec une fièvre de 37,5°C et une toux, il est possible que vous soyez victime d'une infection respiratoire, telle que la grippe ou un rhume.\n\nJe vous conseille de consulter un médecin au plus vite pour obtenir un diagnostic et un traitement appropriés. Vous pouvez également solliciter une téléconsultation sur une borne Tessan pour obtenir un avis médical en ligne.\n\nSi vous ressentez des symptômes graves tels que des difficultés respiratoires, des douleurs aigues ou des vomissements, appelez immédiatement les services de secours au 15.\n\nPour plus d'information, vous pouvez consulter le site de l'Association française de pneumologie (AFP) ou du Centre national de la santé et du bien-être (CNSB) pour obtenir des informations sur les symptômes et les traitements de ces infections respiratoires.\n\nVoulez-vous solliciter une téléconsultation sur une borne Tessan pour obtenir un avis médical en ligne ?"
+        },
+        {
+            "role": "user",
+            "content": "D'accord merci je vais prendre rendez-vous."
+        },
+        {
+            "role": "assistant",
+            "content": "Je suis heureux que vous ayez pris cette décision. Prendre rendez-vous avec un médecin vous permettra d'obtenir un diagnostic et un traitement appropriés pour votre condition.\n\nN'oubliez pas de mentionner vos symptômes et votre fièvre lors de votre rendez-vous pour que votre médecin puisse vous évaluer et vous prescrire le traitement le plus adapté.\n\nSi vous avez des questions ou des préoccupations avant votre rendez-vous, n'hésitez pas à me poser des questions. Je serai là pour vous aider.\n\nEt si vous avez besoin de plus d'information sur les symptômes de la grippe ou du rhume, vous pouvez consulter le site de l'Organisation mondiale de la santé (OMS) ou du Centre national de la santé et du bien-être (CNSB).\n\nÀ bientôt, j'espère que vous vous sentirez mieux bientôt !"
+        }
+    ]
+}

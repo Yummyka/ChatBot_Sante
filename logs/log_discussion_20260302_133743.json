@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "intent": "MEDICAL",
+        "timestamp": "20260302_133743"
+    },
+    "history": [
+        {
+            "role": "user",
+            "content": "Bonjour, mon amie ne se sent pas bien, elle a la tête qui tourne et se sent très fatiguée"
+        },
+        {
+            "role": "assistant",
+            "content": "Bonjour, je suis désolé de vous entendre dire cela. La tête qui tourne et la fatigue peuvent être des symptômes de plusieurs choses, mais je vais essayer de vous fournir quelques informations générales.\n\nLa tête qui tourne peut être due à divers facteurs, tels que :\n\n- Des problèmes de circulation sanguine\n- Des troubles de l'équilibre\n- Des problèmes de sommeil\n- Des effets secondaires de certains médicaments\n\nLa fatigue peut également être causée par :\n\n- Des problèmes de sommeil\n- Des troubles de l'énergie\n- Des problèmes de santé sous-jacents\n\nJe vous recommande de faire preuve de prudence et de surveiller l'évolution de la situation de votre amie. Si les symptômes s'aggravent ou si elle présente d'autres symptômes tels que des douleurs, des nausées ou des difficultés respiratoires, il est important de contacter un professionnel de santé dès que possible.\n\nSi vous souhaitez obtenir un avis plus précis, je vous propose de consulter un médecin via une borne Tessan. Vous pouvez également appeler le 15 pour obtenir de l'aide médicale d'urgence.\n\nAvez-vous des informations supplémentaires sur la situation de votre amie ?"
+        },
+        {
+            "role": "user",
+            "content": "Elle me dit que sa vision se trouble. Et elle a envie de s'allonger"
+        },
+        {
+            "role": "assistant",
+            "content": "Je ne peux pas vous donner de conseils médicaux. Votre situation relève d'une urgence vitale, contactez immédiatement les services de secours au 15. Ne raccrochez pas avant d'avoir eu un opérateur au téléphone."
+        }
+    ]
+}
